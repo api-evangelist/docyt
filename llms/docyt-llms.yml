@@ -1,0 +1,33 @@
+generated: '2026-08-12'
+method: searched
+source: https://docyt.com/llms.txt
+file: docyt-llms.txt
+http_status: 200
+content_type: text/plain
+bytes: 4228
+saved: verbatim
+generator: Yoast SEO v28.1 (self-declared in the document body)
+scope: marketing
+note: >-
+  Docyt does serve a real /llms.txt, but it is an SEO plugin's automatic export of the
+  WordPress marketing site — pages, articles, resources and categories. It contains no API,
+  no specification, no authentication guidance and no developer content of any kind, which
+  is consistent with Docyt publishing no developer program.
+defect:
+  id: staging-host-leak
+  severity: high
+  summary: >-
+    Every link in the served llms.txt points at https://devdocyt.wpengine.com/ — the
+    WP Engine staging origin — rather than at https://www.docyt.com/. All 33 Pages, Posts,
+    Resources, Categories and the Sitemap-index link are affected; not one canonical
+    docyt.com URL appears in the file.
+  consequence: >-
+    Any agent that follows this llms.txt is sent to a staging host instead of production.
+    The file simultaneously advertises a non-public infrastructure hostname and makes the
+    provider's own AI-discovery surface unusable.
+  remedy: >-
+    Set the WordPress site/home URL (or the Yoast canonical base) to the production domain
+    before regenerating llms.txt, and re-publish.
+x-evidence:
+- url: https://docyt.com/llms.txt
+  status: 200

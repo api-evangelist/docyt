@@ -1,0 +1,50 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.docyt.com/pricing/
+currency: USD
+billing_period: month
+note: >-
+  Docyt publishes a price FLOOR but not a plan table. The pricing page states "Plans start
+  at $299/month" and then routes every tier to "Get a custom quote from our experts".
+  No tier is named with its own price, no included quota is stated, and no overage rate is
+  published. Pricing is described as varying by transaction volume, chart-of-accounts
+  complexity and reporting requirements. There is no API pricing of any kind, because
+  there is no public API — these are end-user software subscriptions.
+plans:
+- name: Entry (unnamed)
+  price: 299.00
+  currency: USD
+  period: month
+  price_qualifier: starting-at
+  quota: null
+  overage: null
+  limits: null
+  note: >-
+    The only number Docyt publishes. Rendered on the pricing page as "Plans start at
+    $299/month"; the tier it belongs to is not named.
+- name: Custom / quoted
+  price: null
+  currency: USD
+  period: month
+  price_qualifier: contact-sales
+  quota: null
+  overage: null
+  limits: null
+  note: >-
+    All higher tiers are quoted. Advertised capabilities across the quoted tiers include
+    the Revenue Reconciliation and Expense Management AI agents, multi-entity accounting
+    with consolidated reporting, business intelligence and real-time financial reporting,
+    white-glove onboarding, dedicated bookkeeping experts, and email/ACH support.
+free_tier:
+  available: true
+  note: >-
+    ProfitBooks, Docyt's self-serve small-business product, is advertised with a free
+    7-day trial (https://www.docyt.com/about-us/). This is a trial, not a free plan.
+plan_count: 2
+named_priced_plan_count: 0
+api_pricing: false
+x-evidence:
+- url: https://www.docyt.com/pricing/
+  status: 200
+- url: https://www.docyt.com/pricing-plans/
+  status: 200

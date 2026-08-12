@@ -1,0 +1,72 @@
+generated: '2026-08-12'
+method: probed
+source: live probes of /.well-known/* on every Docyt host
+note: >-
+  Nothing was found. Every /.well-known/ path was probed on both the marketing host
+  (www.docyt.com, WordPress) and the application host (app.docyt.com, the Backbone/React
+  single-page app). No discovery document is served anywhere. IMPORTANT FALSE-POSITIVE
+  WARNING: *.docyt.com is a wildcard catch-all — app.docyt.com answers HTTP 200 with the
+  same 1,110-byte SPA HTML shell for every path, including every /.well-known/* path and
+  every nonsense subdomain (nonsense-xyz123.docyt.com returns the identical shell). Those
+  200s are NOT documents and were counted as misses. The marketing host returns an honest
+  404 for security.txt and a 301 to the site root for the rest. No WellKnown, SecurityTxt,
+  APICatalog or AgentCard pointer is emitted, because Docyt serves none of these surfaces.
+hosts:
+- host: https://www.docyt.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 301
+    note: redirects to the site root; no document
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    note: redirects to the site root; no document
+  - path: /.well-known/api-catalog
+    status: 301
+    note: redirects to the site root; no document
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    note: redirects to the site root; no document
+  - path: /.well-known/agent-card.json
+    status: 301
+    note: redirects to the site root; no document
+  - path: /.well-known/agent.json
+    status: 301
+    note: redirects to the site root; no document
+- host: https://app.docyt.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    note: SPA catch-all shell (1110 bytes), not a document — counted as a miss
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    note: SPA catch-all shell (1110 bytes), not a document — counted as a miss
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    note: SPA catch-all shell (1110 bytes), not a document — counted as a miss
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    note: SPA catch-all shell (1110 bytes), not a document — counted as a miss
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    note: SPA catch-all shell (1110 bytes), not a document — counted as a miss
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    note: SPA catch-all shell (1110 bytes), not a document — counted as a miss
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    note: SPA catch-all shell (1110 bytes), not a document — counted as a miss
+summary:
+  paths_probed: 14
+  real_documents_found: 0
+  security_txt: false
+  agent_card: false
+  api_catalog: false

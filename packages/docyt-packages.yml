@@ -1,0 +1,69 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  registry.npmjs.org scope search (scope:docyt), plus negative searches on PyPI, RubyGems,
+  crates.io, pkg.go.dev, Maven Central, NuGet and Packagist
+note: >-
+  Docyt ships NO API client SDKs. The only first-party packages published to any public
+  registry are two internal engineering-tooling CLIs under the @docyt npm scope, which
+  install Cursor commands, skills and rules for Docyt's own "Team Panda" developers. They
+  do not wrap a Docyt API and are of no use to an integrator. Because of this, a `Packages`
+  pointer IS emitted (the packages are real and first-party) but NO `SDKs` pointer and NO
+  `CLI` pointer are emitted — neither would be an honest signal of API ergonomics.
+packages:
+- language: javascript
+  registry: npm
+  name: '@docyt/panda-cli'
+  url: https://www.npmjs.com/package/@docyt/panda-cli
+  install: npm install -g @docyt/panda-cli
+  official: true
+  version: 0.4.0
+  published: '2026-02-01'
+  license: ISC
+  api_client: false
+  note: >-
+    Internal developer tooling, not an API client. Package description: "CLI tool for
+    installing and managing Docyt Team Panda development tools (Cursor commands, skills,
+    rules)". No repository, homepage or bugs URL is declared in the package metadata.
+- language: javascript
+  registry: npm
+  name: '@docyt/panda-oncall-cli'
+  url: https://www.npmjs.com/package/@docyt/panda-oncall-cli
+  install: npm install -g @docyt/panda-oncall-cli
+  official: true
+  version: 0.1.0
+  published: '2026-02-01'
+  api_client: false
+  note: >-
+    Sibling of @docyt/panda-cli, same description and same publication date. Internal
+    on-call tooling; not an API client.
+registries_checked:
+- registry: npm
+  query: scope:docyt
+  result: 2 packages, both internal tooling
+- registry: pypi
+  query: docyt
+  result: 404 — no package
+- registry: rubygems
+  query: docyt
+  result: empty result set
+- registry: crates.io
+  query: docyt
+  result: no first-party package
+- registry: pkg.go.dev
+  query: docyt
+  result: no first-party module
+- registry: maven-central
+  query: docyt
+  result: no first-party artifact
+- registry: nuget
+  query: docyt
+  result: no first-party package
+- registry: packagist
+  query: docyt
+  result: no first-party package
+summary:
+  package_count: 2
+  official_count: 2
+  api_client_count: 0
+  sdk_pointer_emitted: false

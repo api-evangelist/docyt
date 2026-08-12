@@ -1,0 +1,63 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.docyt.com/security/
+note: >-
+  Docyt publishes no OpenAPI, AsyncAPI, GraphQL SDL or any other machine-readable
+  contract, so no standard below could be derived from a specification. Every entry is
+  either a claim read verbatim off the published security page, or a recorded absence.
+standards:
+- id: soc2-type-ii
+  conforms: true
+  evidence: 'https://www.docyt.com/security/ states verbatim: "Docyt is SOC2 Type II compliant."'
+- id: iso-27001
+  conforms: false
+  evidence: not claimed on the security page or anywhere else on www.docyt.com
+- id: pci-dss
+  conforms: false
+  evidence: not claimed, despite the platform handling ACH bill pay and merchant reconciliation
+- id: hipaa
+  conforms: false
+  evidence: not claimed
+- id: fedramp
+  conforms: false
+  evidence: not claimed
+- id: gdpr
+  conforms: false
+  evidence: >-
+    not claimed on the security page; the privacy policy at https://www.docyt.com/privacy/
+    was not read as a compliance certification
+- id: oauth2
+  conforms: true
+  evidence: >-
+    https://www.docyt.com/security/ states OAuth 2.0 is used for authenticating Docyt to
+    third-party cloud services (QuickBooks, Xero, Plaid and similar). This is Docyt acting
+    as an OAuth CLIENT against its integration partners — it is NOT an OAuth authorization
+    server for third-party developers, and no scopes/ artifact is emitted for it.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 301 on www.docyt.com and the SPA shell
+    on app.docyt.com; no OIDC discovery document is served
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: no published error contract; no specification to derive from
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on www.docyt.com
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: no deprecation policy or Sunset header support published
+- id: a2a-agent-card
+  conforms: false
+  evidence: /.well-known/agent-card.json and /.well-known/agent.json miss on every host
+security_posture:
+  encryption_at_rest: AES-256 for documents and sensitive fields (SSN, account numbers)
+  key_exchange: RSA-2048
+  transport: HTTPS/TLS; probe observed TLSv1.3 on www.docyt.com
+  mfa: two-factor authentication by SMS on by default; biometric (face/fingerprint) sign-in
+    on mobile
+  source: https://www.docyt.com/security/
+x-evidence:
+- url: https://www.docyt.com/security/
+  status: 200
+- url: https://www.docyt.com/.well-known/security.txt
+  status: 404

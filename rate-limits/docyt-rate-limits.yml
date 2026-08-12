@@ -1,0 +1,28 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  documentation search across www.docyt.com (no developer surface exists) plus a live
+  unauthenticated request to https://app.docyt.com/api/v1/business_users
+note: >-
+  No rate limits are published, because no public API is published. A live unauthenticated
+  request to the private application backend was made to see whether any runtime limit
+  signal is returned at the edge. It is not: the CloudFront/nginx wildcard answers HTTP 200
+  with the 1,110-byte single-page-app HTML shell rather than a JSON error, so an agent gets
+  no 401, no 429, and no limit header — it gets HTML with a 200. Response headers observed
+  were server, cache-control, x-cache, x-amz-cf-pop and x-amz-cf-id only. No X-RateLimit-*,
+  no RateLimit-*, no Retry-After.
+limits: []
+limit_count: 0
+headers:
+  ratelimit_limit: null
+  ratelimit_remaining: null
+  ratelimit_reset: null
+  retry_after: null
+  standard: null
+exhaustion_status_code: null
+x-evidence:
+- url: https://app.docyt.com/api/v1/business_users
+  status: 200
+  note: content-type text/html — SPA shell returned to an unauthenticated JSON request
+- url: https://www.docyt.com/developers
+  status: 404

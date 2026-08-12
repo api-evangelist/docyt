@@ -1,17 +1,35 @@
 aid: docyt
 name: Docyt
-description: 'Docyt is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Docyt is a Silicon Valley accounting-automation company that sells AI-driven
+  bookkeeping software to small and mid-sized businesses, accounting firms, and multi-property
+  hospitality and franchise operators. The platform digitizes source documents, categorizes
+  and matches transactions, runs continuous bank and merchant reconciliation, handles bill
+  pay and expense management, and closes the books against a real-time general ledger that
+  syncs with QuickBooks, NetSuite, Sage, Xero and Zoho. Products include the HpAI (High
+  Precision Accounting Intelligence) engine, Accountant Copilot for firms, ClosingFlow for
+  month-end close, and ProfitBooks for self-serve small-business bookkeeping. Docyt publishes
+  no public developer program: there is no developer portal, no API reference, and no
+  machine-readable specification. Its application backend at app.docyt.com exposes a private
+  /api/v1 surface consumed only by its own web and mobile clients, and the customer knowledge
+  base redirects to a tenant sign-in.'
+image: https://www.docyt.com/wp-content/uploads/2023/07/social-image-financial-insights.jpeg
 url: https://raw.githubusercontent.com/api-evangelist/docyt/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
+- Accounting
+- Bookkeeping
+- Financial Operations
+- Accounts Payable
+- Expense Management
+- Reconciliation
+- Hospitality
+- Artificial Intelligence
+- SaaS
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,71 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/docyt-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.docyt.com/
+- type: Blog
+  url: https://www.docyt.com/blog/
+- type: BlogRSS
+  url: https://www.docyt.com/feed/
+- type: Pricing
+  url: https://www.docyt.com/pricing/
+- type: Login
+  url: https://app.docyt.com/sign_in
+- type: Support
+  url: https://www.docyt.com/contact/
+- type: TermsOfService
+  url: https://www.docyt.com/terms/
+- type: PrivacyPolicy
+  url: https://www.docyt.com/privacy/
+- type: GitHubOrganization
+  url: https://github.com/docyt
+- type: StatusPage
+  url: https://docyt.statuspage.io/
+- type: Integrations
+  url: https://www.docyt.com/integrations/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/docyt/
+- type: YouTube
+  url: https://www.youtube.com/@docytinc
+- type: LLMsTxt
+  url: llms/docyt-llms.txt
+- type: Lifecycle
+  url: lifecycle/docyt-lifecycle.yml
+- type: Conformance
+  url: conformance/docyt-conformance.yml
+- type: Compliance
+  url: https://www.docyt.com/security/
+- type: Packages
+  url: packages/docyt-packages.yml
+- type: Plans
+  url: plans/docyt-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/docyt-rate-limits.yml
+x-enrichment:
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 9
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Docyt sells end-user accounting software only — /developers, /developer, /api, /api-docs
+    and /docs all 404 on www.docyt.com, its GitHub org publishes zero public repositories,
+    and the /api/v1 surface visible in the app.docyt.com JavaScript bundle is a private
+    backend for Docyt's own web and mobile clients that returns the SPA HTML shell, not JSON,
+    to any unauthenticated caller.
+  evidence:
+  - url: https://www.docyt.com/developers
+    status: 404
+  - url: https://www.docyt.com/api-docs
+    status: 404
+  - url: https://app.docyt.com/openapi.json
+    status: 200
+  - url: https://app.docyt.com/api/v1/business_users
+    status: 200
+  - url: https://api.github.com/orgs/docyt/repos
+    status: 200
+  checked: '2026-08-12'

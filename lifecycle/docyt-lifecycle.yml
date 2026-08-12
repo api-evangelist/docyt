@@ -1,0 +1,51 @@
+generated: '2026-08-12'
+method: searched
+source: https://app.docyt.com/ (Statuspage embed script) + https://docyt.statuspage.io/api/v2/summary.json
+status_page: https://docyt.statuspage.io/
+status_page_detail:
+  provider: Atlassian Statuspage
+  page_id: 6zq499xqjp75
+  api: https://docyt.statuspage.io/api/v2/status.json
+  discovered_via: >-
+    Not linked from the marketing site. Found as an embedded widget script
+    (https://6zq499xqjp75.statuspage.io/embed/script.js) in the app.docyt.com HTML shell,
+    then resolved to its canonical page through the Statuspage v2 API.
+  components:
+  - Web application
+  - iOS app
+  - Android app
+  note: >-
+    The components list covers the end-user applications only. No API component is
+    monitored, which is consistent with Docyt publishing no public API.
+  observed_status: 'All Systems Operational (indicator: none) as of 2026-08-11T16:35:45Z'
+versioning:
+  scheme: null
+  current: null
+  docs: null
+  note: >-
+    No public versioning policy. The private application backend uses a URI-path /api/v1/
+    prefix (observed in the app's own JavaScript bundle), but that is an internal client
+    contract, not a published or supported version scheme.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No deprecation policy, Sunset/Deprecation header support (RFC 8594), or migration
+    guidance is published. No Deprecation pointer is emitted.
+sla:
+  url: null
+  uptime_target: null
+  note: No SLA or uptime commitment is published on the pricing, security, or terms pages.
+changelog:
+  url: null
+  note: >-
+    /changelog, /release-notes, /whats-new and /product-updates all return 404 on
+    www.docyt.com. Product news is published as marketing articles under
+    /article/ rather than as a dated changelog, so no ChangeLog artifact is emitted.
+deprecated_operations: []
+x-evidence:
+- url: https://docyt.statuspage.io/api/v2/summary.json
+  status: 200
+- url: https://www.docyt.com/changelog
+  status: 404
+- url: https://www.docyt.com/release-notes
+  status: 404
