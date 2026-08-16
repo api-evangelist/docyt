@@ -1,0 +1,21 @@
+{
+  "repo": "docyt",
+  "feeds": [
+    {
+      "source": "https://www.docyt.com/",
+      "feed_url": "https://www.docyt.com/feed/",
+      "title": "",
+      "saved": 1,
+      "method": "discovered"
+    },
+    {
+      "source": "https://www.docyt.com/blog/",
+      "feed_url": "https://www.docyt.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 1,
+  "fetched": "2026-08-15T12:22:01Z"
+}
