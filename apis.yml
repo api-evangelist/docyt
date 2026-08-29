@@ -12,6 +12,17 @@ description: 'Docyt is a Silicon Valley accounting-automation company that sells
   machine-readable specification. Its application backend at app.docyt.com exposes a private
   /api/v1 surface consumed only by its own web and mobile clients, and the customer knowledge
   base redirects to a tenant sign-in.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.docyt.com/wp-content/uploads/2023/07/social-image-financial-insights.jpeg
 url: https://raw.githubusercontent.com/api-evangelist/docyt/refs/heads/main/apis.yml
 x-type: company
