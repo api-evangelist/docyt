@@ -1,0 +1,26 @@
+generated: '2026-10-14'
+method: searched
+checked:
+- paychex-developer/integrations/paychex-developer-integration-edges.yml
+source:
+- paychex-developer/integrations/paychex-developer-integration-edges.yml
+edges:
+- partner_name: Paychex (own)
+  partner: paychex-developer
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.paychex.com/apps/497097/docyt-ai
+  mirror_of: paychex-developer/integrations/paychex-developer-integration-edges.yml
+  apps:
+  - Docyt AI
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Reporting & Analytics
+  badges:
+  - AI-Enabled
